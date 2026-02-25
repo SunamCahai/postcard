@@ -167,7 +167,7 @@ position: relative;
 @media (max-width: 480px) {
     #greeting { 
         background-color: var(--bg-dark);
-        overflow: hidden;
+        color: #c5a332;
         font-family: 'Playfair Display', serif;
         font-size: 1.6rem !important; 
     }
