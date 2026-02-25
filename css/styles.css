@@ -59,8 +59,10 @@ body {
     opacity: 0;
     transition: opacity 2s ease;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .background-image {
@@ -88,15 +90,16 @@ body {
 
 #greeting {
     font-family: 'Playfair Display', serif;
-    font-size: 6rem;
+    font-size: 5rem;
     color: var(--gold);
     text-align: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.2em;
+    gap: 0.1em;
     z-index: 10;
     position: relative;
+    margin-bottom: 20px;
 }
 .letter {
     display: inline-block;
@@ -132,8 +135,30 @@ body {
 }
 
 @media (max-width: 768px) {
-    #greeting { font-size: 4rem; }
-    #start-btn { font-size: 1.8rem; }
+    #greeting { 
+        font-size: 2.5rem;
+        padding: 0 10px;
+    }
+
+    #start-btn { 
+        font-size: 1.5rem; 
+        padding: 1rem 2rem;
+    }
+
+    #bouquet {
+        width: 300px;
+        opacity: 0.6; 
+    }
+
+    #btn-group {
+        flex-direction: row; 
+        gap: 15px;
+    }
+
+    .choice-btn {
+        padding: 12px 25px;
+        font-size: 1.2rem;
+    }
 }
 
 #btn-group {
@@ -143,6 +168,7 @@ body {
     display: flex;
     gap: 20px;
     z-index: 10;
+    margin-top: 20px;
 }
 
 #btn-group.visible {
