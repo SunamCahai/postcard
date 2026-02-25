@@ -90,23 +90,25 @@ body {
 }
 
 #greeting {
-    display: flex;     
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
+position: relative;
     z-index: 10;
     margin-bottom: 20px;
     width: 100%;
+    max-width: 90vw;
     padding: 0 20px;
-    line-height: 1.2;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 3rem; 
+    color: var(--gold);
+    display: block;
 }
 .letter {
     display: inline-block;
+    white-space: pre; 
     opacity: 0;
     transform: translateY(20px);
-    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1); 
+    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 .letter.visible {
     opacity: 1;
     transform: translateY(0);
@@ -135,8 +137,9 @@ body {
 
 @media (max-width: 768px) {
     #greeting { 
-        font-size: 2.5rem;
-        padding: 0 10px;
+        #greeting { 
+        font-size: 2rem !important;
+        margin-bottom: 30px;
     }
 
     #start-btn { 
@@ -145,13 +148,14 @@ body {
     }
 
     #bouquet {
-        width: 300px;
-        opacity: 0.6; 
+        width: 70vw;
+        max-width: 250px;
+        opacity: 0.4;
     }
 
     #btn-group {
         flex-direction: row; 
-        gap: 15px;
+        gap: 20px;
     }
 
     .choice-btn {
@@ -162,7 +166,7 @@ body {
 
 @media (max-width: 480px) {
     #greeting { 
-        font-size: 2.2rem !important; 
+        font-size: 1.6rem !important; 
     }
     .choice-btn {
         padding: 15px 35px; 
