@@ -1,0 +1,169 @@
+
+:root {
+    --bg-dark: #0a0a0a;
+    --gold: #c5a332;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, #1a0505 0%, #000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 1s ease;
+}
+
+#start-btn {
+    padding: 1.5rem 3rem;
+    font-size: 2.5rem;
+    background: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Great Vibes', cursive;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+#start-btn:hover {
+    background: var(--gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+    transform: scale(1.05);
+}
+
+#main-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/roses_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: 1;
+}
+
+#bouquet {
+    position: absolute;
+    width: 600px;
+    max-width: 90%;
+    z-index: 2;
+    transform: scale(0);
+    transition: transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+#bouquet.bloom {
+    transform: scale(1);
+}
+
+#greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: var(--gold);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.2em;
+    z-index: 10;
+    position: relative;
+}
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1); 
+}
+
+.letter.visible {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+#greeting.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.petal {
+    position: fixed;
+    top: -50px;
+    z-index: 5;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    #greeting { font-size: 4rem; }
+    #start-btn { font-size: 1.8rem; }
+}
+
+#btn-group {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+#btn-group.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.choice-btn {
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    transition: 0.3s;
+}
+
+.choice-btn:hover {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 0 15px var(--gold);
+}
