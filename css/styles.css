@@ -2,6 +2,7 @@
     --bg-dark: #0a0a0a;
     --gold: #c5a332;
     --white: #ffffff;
+    color-scheme: dark;
 }
 
 * {
@@ -100,6 +101,7 @@ body {
     line-height: 1.4;
     font-size: 3rem; 
     display: block; 
+    color: var(--gold);
 }
 
 .letter {
