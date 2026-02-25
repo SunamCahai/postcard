@@ -1,4 +1,3 @@
-// Ждем загрузки DOM, чтобы скрипт видел все кнопки
 document.addEventListener('DOMContentLoaded', () => {
     const startBtn = document.getElementById('start-btn');
     const introOverlay = document.getElementById('intro-overlay');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const soundYox = document.getElementById('sound-yox');
     const soundVar = document.getElementById('sound-var');
 
-    // Безопасное добавление кликов (проверяем, существуют ли кнопки)
     const yoxBtn = document.getElementById('btn-yox');
     const varBtn = document.getElementById('btn-var');
 
