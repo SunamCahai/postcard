@@ -1,0 +1,2 @@
+# postcard
+funny_postcard
